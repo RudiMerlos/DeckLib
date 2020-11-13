@@ -36,8 +36,13 @@ namespace DeckLib
         /// <returns>The current <c>Card</c> which is pointed by deckPointer.</returns>
         public Card getNextCard()
         {
+
             // TODO: get next card
-            return null;
+            int lastIndex = cardList.Count()-1;
+            Card nextCard = cardList.ElementAt(lastIndex);
+            cardList.RemoveAt(lastIndex);
+
+            return nextCard;
         }
     }
 }
