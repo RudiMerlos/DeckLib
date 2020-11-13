@@ -9,21 +9,18 @@ namespace DeckLib
     public class Deck
     {
         private List<Card> cardList;
-        private int deckPointer;
 
         /// <summary>Constructor initialize an ordered deck and set deckPointer to 0.</summary>
         public Deck()
         {
-            deckPointer = 0;
-            // TODO: initialize cardList with all 52 cards
-            cardList.Add(new Card(FrenchDeckNumber.CA, FrenchDeckSuit.CLOVERS));
+            cardList = new List<Card>();
+            initializeDeck();
         }
 
-        /// <summary>Reset deck by setting card's state to false and deckPointer to 0.</summary>
-        public void ResetDeck()
+        public void initializeDeck()
         {
-            deckPointer = 0;
-            cardList.ForEach(c => c.DealState = false);
+            // TODO: initialize cardList with all 52 cards
+            cardList.Add(new Card(FrenchDeckNumber.CA, FrenchDeckSuit.CLOVERS));
         }
 
         /// <summary>Shuffle the cards in the deck.</summary>
@@ -39,8 +36,8 @@ namespace DeckLib
         /// <returns>The current <c>Card</c> which is pointed by deckPointer.</returns>
         public Card getNextCard()
         {
-            cardList[deckPointer].DealState = true;
-            return cardList[deckPointer++];
+            // TODO: get next card
+            return null;
         }
     }
 }
