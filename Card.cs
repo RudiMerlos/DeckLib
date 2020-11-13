@@ -3,7 +3,7 @@
     /// <summary>Enumeration <c>FrenchDeckNumber</c> to manage the 13 numbers of a french deck.</summary>
     public enum FrenchDeckNumber
     {
-        CA, C2, C3, C4, C5, C6, C7, C8, C9, C10, CJ, CQ, CK
+        CA = 1, C2, C3, C4, C5, C6, C7, C8, C9, C10, CJ, CQ, CK
     }
 
     /// <summary>Enumeration <c>FrenchDeckSuit</c> to manage the 4 suits of a french deck.</summary>
