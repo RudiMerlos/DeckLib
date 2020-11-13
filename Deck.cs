@@ -20,7 +20,22 @@ namespace DeckLib
         public void initializeDeck()
         {
             // TODO: initialize cardList with all 52 cards
-            cardList.Add(new Card(FrenchDeckNumber.CA, FrenchDeckSuit.CLOVERS));
+            /*FrenchDeckNumber myNumber = new FrenchDeckNumber();
+            FrenchDeckSuit mySuit = new FrenchDeckSuit();*/
+
+            for (int SuitCount = 0; SuitCount < 4; SuitCount++/*FrenchDeckSuit*/)
+            {
+                for (int NumberCount = 0; NumberCount < 13; NumberCount++/*FrenchDeckNumber*/)
+                {
+                    cardList.Add(new Card((FrenchDeckNumber)NumberCount, (FrenchDeckSuit)SuitCount));
+                }
+
+                /*foreach (Card cards in cardList)
+                {
+                    Console.WriteLine(cards);
+                }*/
+            }
+            
         }
 
         /// <summary>Shuffle the cards in the deck.</summary>
