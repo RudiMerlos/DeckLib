@@ -4,8 +4,7 @@ using System.Collections.Generic;
 
 namespace DeckLib
 {
-    /// <summary>Class <c>Deck</c> represents a deck of cards. It consists of a list of cards and a pointer to current
-    ///  card.</summary>
+    /// <summary>Class <c>Deck</c> represents a deck of cards. It consists of a list of cards.</summary>
     public class Deck
     {
         private List<Card> cardList;
@@ -33,8 +32,8 @@ namespace DeckLib
             cardList = randomList;
         }
 
-        /// <summary>Return the card pointed to by deckPointer and increments by one deckPointer.</summary>
-        /// <returns>The current <c>Card</c> which is pointed by deckPointer.</returns>
+        /// <summary>Return the last card and remove it.</summary>
+        /// <returns>The last <c>Card</c> in the deck.</returns>
         public Card getNextCard()
         {
             int lastIndex = cardList.Count()-1;
