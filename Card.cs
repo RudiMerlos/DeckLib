@@ -33,15 +33,48 @@
         /// <summary>Report a card as a string.</summary>
         /// <returns>A string representing a card in the form [number,suit].</returns>
         public override string ToString() {
-            // TODO: return number and suit as a string (i.e. [2,♥])
-            return null;
+            return "[" + Number + "," + SuitToChar() + "]";
         }
 
         /// <summary>Generates a string array to draw in console the current card.</summary>
         /// <returns>A string array representing the drawing of a deck card line by line.</returns>
         public string[] ToArray() {
-            // TODO: return an array with lines of entire card
-            return null;
+            string[] draw = new string[9];
+            draw[0] = "┌───────────┐";
+            draw[1] = "│" + Number + "          │";
+            draw[2] = "│           │";
+            draw[3] = "│           │";
+            draw[4] = "│     " + SuitToChar() + "     │";
+            draw[5] = "│           │";
+            draw[6] = "│           │";
+            draw[7] = "│          " + Number + "│";
+            draw[8] = "└───────────┘";
+
+            return draw;
+        }
+
+        /// <summary>Convert Suit enum to char.</summary>
+        /// <returns>A suit char.</returns>
+        private char SuitToChar()
+        {
+            char suitChr = ' ';
+            switch (Suit)
+            {
+                case FrenchDeckSuit.SPADES:
+                    suitChr = '♠';
+                    break;
+                case FrenchDeckSuit.HEARTS:
+                    suitChr = '♥';
+                    break;
+                case FrenchDeckSuit.CLOVERS:
+                    suitChr = '♣';
+                    break;
+                case FrenchDeckSuit.DIAMONDS:
+                    suitChr = '♦';
+                    break;
+            }
+
+            return suitChr;
         }
     }
 }
