@@ -26,7 +26,7 @@ namespace DeckLib
         /// <summary>Shuffle the cards in the deck.</summary>
         public void ShuffleDeck()
         {
-            var rand = new Random();
+            var rand = new Random(DateTime.Now.Millisecond);
             var randomList = cardList.OrderBy(c => rand.Next()).ToList();
             cardList.Clear();
             cardList = randomList;
