@@ -10,14 +10,15 @@ namespace DeckLib
     {
         private List<Card> cardList;
 
-        /// <summary>Constructor initialize an ordered deck and set deckPointer to 0.</summary>
+        /// <summary>Constructor initialize cardList and calls to InitializeDeck.</summary>
         public Deck()
         {
             cardList = new List<Card>();
-            initializeDeck();
+            InitializeDeck();
         }
 
-        public void initializeDeck()
+        /// <summary>Initialize an ordered deck.</summary>
+        public void InitializeDeck()
         {
             // TODO: initialize cardList with all 52 cards
             cardList.Add(new Card(FrenchDeckNumber.CA, FrenchDeckSuit.CLOVERS));
@@ -36,8 +37,6 @@ namespace DeckLib
         /// <returns>The current <c>Card</c> which is pointed by deckPointer.</returns>
         public Card getNextCard()
         {
-
-            // TODO: get next card
             int lastIndex = cardList.Count()-1;
             Card nextCard = cardList.ElementAt(lastIndex);
             cardList.RemoveAt(lastIndex);
