@@ -17,25 +17,15 @@ namespace DeckLib
         }
 
         /// <summary>Initialize an ordered deck.</summary>
-        public void InitializeDeck()
+        private void InitializeDeck()
         {
-            // TODO: initialize cardList with all 52 cards
-            /*FrenchDeckNumber myNumber = new FrenchDeckNumber();
-            FrenchDeckSuit mySuit = new FrenchDeckSuit();*/
-
-            for (int SuitCount = 0; SuitCount < 4; SuitCount++/*FrenchDeckSuit*/)
+            for (int SuitCount = 0; SuitCount < 4; SuitCount++)
             {
-                for (int NumberCount = 0; NumberCount < 13; NumberCount++/*FrenchDeckNumber*/)
+                for (int NumberCount = 0; NumberCount < 13; NumberCount++)
                 {
                     cardList.Add(new Card((FrenchDeckNumber)NumberCount, (FrenchDeckSuit)SuitCount));
                 }
-
-                /*foreach (Card cards in cardList)
-                {
-                    Console.WriteLine(cards);
-                }*/
             }
-            
         }
 
         /// <summary>Shuffle the cards in the deck.</summary>
