@@ -33,7 +33,7 @@
         /// <summary>Report a card as a string.</summary>
         /// <returns>A string representing a card in the form [number,suit].</returns>
         public override string ToString() {
-            return "[" + NumberToString() + "," + SuitToChar() + "]";
+            return NumberToString() + " of " + Suit;
         }
 
         /// <summary>Generates a string array to draw in console the current card.</summary>
