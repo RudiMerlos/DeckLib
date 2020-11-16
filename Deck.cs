@@ -21,7 +21,7 @@ namespace DeckLib
         {
             for (int SuitCount = 0; SuitCount < 4; SuitCount++)
             {
-                for (int NumberCount = 0; NumberCount < 13; NumberCount++)
+                for (int NumberCount = 1; NumberCount <= 13; NumberCount++)
                 {
                     cardList.Add(new Card((FrenchDeckNumber)NumberCount, (FrenchDeckSuit)SuitCount));
                 }
