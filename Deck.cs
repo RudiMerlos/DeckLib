@@ -37,15 +37,27 @@ namespace DeckLib
             cardList = randomList;
         }
 
-        /// <summary>Return the last card and remove it.</summary>
-        /// <returns>The last <c>Card</c> in the deck.</returns>
-        public Card getNextCard()
+        /// <summary>Returns the last card and remove it.</summary>
+        /// <returns>The last <c>Card</c> in the deck or null if card list is empty.</returns>
+        public Card GetNextCard()
         {
-            int lastIndex = cardList.Count()-1;
-            Card nextCard = cardList.ElementAt(lastIndex);
-            cardList.RemoveAt(lastIndex);
+            Card nextCard = null;
+
+            if (GetSize() > 0)
+            {
+                int lastIndex = cardList.Count() - 1;
+                nextCard = cardList.ElementAt(lastIndex);
+                cardList.RemoveAt(lastIndex);
+            }
 
             return nextCard;
+        }
+
+        /// <summary>Returns card list size.</summary>
+        /// <returns>An integer which contains the card list size.</returns>
+        public int GetSize()
+        {
+            return cardList.Count();
         }
     }
 }
