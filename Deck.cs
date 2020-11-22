@@ -19,9 +19,11 @@ namespace DeckLib
         /// <summary>Initialize an ordered deck.</summary>
         private void InitializeDeck()
         {
-            for (int SuitCount = 0; SuitCount < 4; SuitCount++)
+            int amountOfSuits = Enum.GetNames(typeof(FrenchDeckSuit)).Length;
+            int amountOfNumbers = Enum.GetNames(typeof(FrenchDeckNumber)).Length;
+            for (int SuitCount = 0; SuitCount < amountOfSuits; SuitCount++)
             {
-                for (int NumberCount = 1; NumberCount <= 13; NumberCount++)
+                for (int NumberCount = 1; NumberCount <= amountOfNumbers; NumberCount++)
                 {
                     cardList.Add(new Card((FrenchDeckNumber)NumberCount, (FrenchDeckSuit)SuitCount));
                 }
