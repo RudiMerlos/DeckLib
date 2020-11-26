@@ -30,7 +30,7 @@ namespace DeckLib
     }
 
     /// <summary>Class <c>Card</c> represents a card of deck. It consists of a number and a suit.</summary>
-    public class Card : IComparable<Card>
+    public class Card : IComparable<Card>, IEquatable<Card>
     {
         /// <summary>Constructor initialize the new Card to (<paramref name="number"/>, <paramref name="suit"/>).</summary>
         /// <param name="number">the new Card's number.</param>
@@ -133,6 +133,21 @@ namespace DeckLib
                 return this.Number.CompareTo(other.Number);
             }
             return this.Suit.CompareTo(other.Suit);
+        }
+        
+        public bool Equals (Card other){
+            if(other==null) return false;
+            if (this.Suit == other.Suit){
+                if(this.Number == other.Number){
+                    return true;
+                }
+                else{
+                    return false;
+                }
+            }
+            else{
+                return false;
+            }
         }
     }
 }
