@@ -1,19 +1,36 @@
-﻿namespace DeckLib
+﻿using System;
+
+namespace DeckLib
 {
     /// <summary>Enumeration <c>FrenchDeckNumber</c> to manage the 13 numbers of a french deck.</summary>
     public enum FrenchDeckNumber
     {
-        CA = 1, C2, C3, C4, C5, C6, C7, C8, C9, C10, CJ, CQ, CK
+        CA = 1,
+        C2,
+        C3,
+        C4,
+        C5,
+        C6,
+        C7,
+        C8,
+        C9,
+        C10,
+        CJ,
+        CQ,
+        CK
     }
 
     /// <summary>Enumeration <c>FrenchDeckSuit</c> to manage the 4 suits of a french deck.</summary>
     public enum FrenchDeckSuit
     {
-        SPADES, HEARTS, CLUBS, DIAMONDS
+        SPADES,
+        HEARTS,
+        CLUBS,
+        DIAMONDS
     }
 
     /// <summary>Class <c>Card</c> represents a card of deck. It consists of a number and a suit.</summary>
-    public class Card
+    public class Card : IComparable<Card>
     {
         /// <summary>Constructor initialize the new Card to (<paramref name="number"/>, <paramref name="suit"/>).</summary>
         /// <param name="number">the new Card's number.</param>
@@ -32,13 +49,15 @@
 
         /// <summary>Report a card as a string.</summary>
         /// <returns>A string representing a card in the form [number,suit].</returns>
-        public override string ToString() {
+        public override string ToString()
+        {
             return NumberToString() + " of " + Suit;
         }
 
         /// <summary>Generates a string array to draw in console the current card.</summary>
         /// <returns>A string array representing the drawing of a deck card line by line.</returns>
-        public string[] ToArray() {
+        public string[] ToArray()
+        {
             string[] draw = new string[9];
             string number = NumberToString();
             string spaceAdd = number.Length > 1 ? "" : " ";
@@ -76,7 +95,7 @@
                     result = "K";
                     break;
                 default:
-                    result = ((int)Number).ToString();
+                    result = ((int) Number).ToString();
                     break;
             }
 
@@ -105,6 +124,15 @@
             }
 
             return suitChr;
+        }
+        // <summary> Define the rule to compare cards <summary>
+        public int CompareTo(Card other)
+        {
+            if (this.Suit == other.Suit)
+            {
+                return this.Number.CompareTo(other.Number);
+            }
+            return this.Suit.CompareTo(other.Suit);
         }
     }
 }
